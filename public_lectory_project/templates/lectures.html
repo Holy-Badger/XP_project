@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Лекции{% endblock %}
+{% block content %}
+<section>
+    <h1>Расписание лекций</h1>
+    <div class="grid-2">
+        {% for lecture in lectures %}
+        <article class="card">
+            <h3>{{ lecture.title }}</h3>
+            <p>{{ lecture.description }}</p>
+            <p><strong>Дата:</strong> {{ lecture.lecture_date }}</p>
+            <p><strong>Время:</strong> {{ lecture.lecture_time }}</p>
+            <p><strong>Формат:</strong> {{ lecture.format }}</p>
+            <p><strong>Место:</strong> {{ lecture.place }}</p>
+            <p><strong>Лектор:</strong> {{ lecture.full_name }}</p>
+            <p><strong>Мест:</strong> {{ lecture.seats }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
